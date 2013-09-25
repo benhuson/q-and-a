@@ -64,6 +64,7 @@ $subPageStr = faqpageorder_getSubPages($parentID);
 <form action="edit.php" method="get" >
 	 <?php 
 		$tax_slug = 'faq_category';
+		$tax_slug_value = isset( $_GET[$tax_slug] ) ? $_GET[$tax_slug] : 0;
 		
 		// retrieve the taxonomy object
 		$tax_obj = get_taxonomy($tax_slug);
@@ -76,7 +77,7 @@ $subPageStr = faqpageorder_getSubPages($parentID);
 		echo "<option value=''>" . printf(__('Show All %1$s', 'qa-free'), $tax_name) . "</option>";
 		foreach ($terms as $term) {
 			// output each select option line, check against the last $_GET to show the current option selected
-			echo '<option value='. $term->term_id, $_GET[$tax_slug] == $term->term_id ? ' selected="selected"' : '','>' . $term->name .' (' . $term->count .')</option>';
+			echo '<option value='. $term->term_id, $tax_slug_value == $term->term_id ? ' selected="selected"' : '','>' . $term->name .' (' . $term->count .')</option>';
 		}
 		echo "</select>";
 		
