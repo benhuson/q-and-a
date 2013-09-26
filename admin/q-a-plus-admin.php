@@ -403,9 +403,9 @@ function q_a_plus_validate_options( $input ) {
 		$input['breadcrumbs'] = null;
 	$input['breadcrumbs'] = ( $input['breadcrumbs'] == "true" ? "true" : "false" );
 
-	if ( ! isset( $input['excerpt'] ) )
-		$input['excerpt'] = null;
-	$input['excerpt'] = ( $input['excerpt'] == "true" ? "true" : "false" );
+	if ( ! isset( $input['excerpts'] ) )
+		$input['excerpts'] = null;
+	$input['excerpts'] = ( $input['excerpts'] == "true" ? "true" : "false" );
 
 	if ( ! isset( $input['accordion'] ) )
 		$input['accordion'] = null;
